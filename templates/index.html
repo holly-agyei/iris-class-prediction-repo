@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Species Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/flower.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(24, 24, 32, 0.72);
+            padding: 40px 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+            max-width: 420px;
+            width: 95%;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 20px;
+            backdrop-filter: blur(18px) saturate(120%);
+            -webkit-backdrop-filter: blur(18px) saturate(120%);
+        }
+        h1 {
+            color: #f2f2f2;
+            margin-bottom: 18px;
+            font-size: 2.1em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        }
+        .iris-icon {
+            width: 60px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 2px 8px #222a  );
+        }
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            color: #e0e0e0;
+            font-size: 1.08em;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 13px 12px;
+            border: 1.5px solid #444a;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1.05em;
+            background: rgba(32,32,40,0.85);
+            color: #f2f2f2;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        input[type="number"]:focus {
+            border: 1.5px solid #888;
+            outline: none;
+            box-shadow: 0 0 0 2px #2228;
+        }
+        input[type="submit"] {
+            background: #23232b;
+            color: #f2f2f2;
+            padding: 15px 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.15em;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px #0006;
+            transition: background 0.3s, transform 0.2s, color 0.2s;
+        }
+        input[type="submit"]:hover {
+            background: #353545;
+            color: #fff;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 16px #0008;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 8px;
+                max-width: 98vw;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg class="iris-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="32" cy="32" rx="30" ry="18" fill="#b39ddb" opacity="0.4"/><ellipse cx="32" cy="32" rx="18" ry="30" fill="#8e24aa" opacity="0.3"/><ellipse cx="32" cy="32" rx="10" ry="18" fill="#6a1b9a" opacity="0.5"/></svg>
+        <h1>Discover Your Iris Flower's Identity</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="sepal_length">Sepal Length (cm):</label>
+                <input type="number" id="sepal_length" name="sepal_length" step="any" required placeholder="e.g., 5.1">
+            </div>
+            <div class="form-group">
+                <label for="sepal_width">Sepal Width (cm):</label>
+                <input type="number" id="sepal_width" name="sepal_width" step="any" required placeholder="e.g., 3.5">
+            </div>
+            <div class="form-group">
+                <label for="petal_length">Petal Length (cm):</label>
+                <input type="number" id="petal_length" name="petal_length" step="any" required placeholder="e.g., 1.4">
+            </div>
+            <div class="form-group">
+                <label for="petal_width">Petal Width (cm):</label>
+                <input type="number" id="petal_width" name="petal_width" step="any" required placeholder="e.g., 0.2">
+            </div>
+            <input type="submit" value="Predict Species">
+        </form>
+    </div>
+</body>
+</html>
