@@ -1,6 +1,6 @@
-# Iris Class Prediction App
+# IRIS ClASS PREDICTION APP
 
-A modern web application for predicting the species of an Iris flower using machine learning and a beautiful, mobile-friendly UI.
+A modern web application for predicting the species of an Iris flower using machine learning(logistic Regression) and a beautiful, mobile-friendly UI.
 
 ## 🌸 Overview
 This app allows users to enter measurements of an Iris flower (sepal length, sepal width, petal length, petal width) and predicts the species (Setosa, Versicolor, or Virginica). The results page provides not only the prediction, but also a photo, fun facts, health benefits, and societal/cultural notes about the predicted flower.
