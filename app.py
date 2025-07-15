@@ -4,6 +4,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import joblib # For loading the model
 from sklearn.preprocessing import LabelEncoder # For converting prediction back to name
+import os
 
 app = Flask(__name__)
 
@@ -149,4 +150,5 @@ def predict():
 # The `flask run` command handles starting the development server for you.
 # If you ever run directly with `python app.py`, then you would uncomment:
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
